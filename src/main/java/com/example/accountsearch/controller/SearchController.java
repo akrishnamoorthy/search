@@ -40,8 +40,8 @@ public class SearchController {
         return "search";
     }
 
-    public List<Account> getAccouknts() throws SolrServerException, IOException {
-        String solrUrl = env.getProperty("solr.url") != null ?  env.getProperty("solr.url")  : "http://host.docker.internal:8983/solr/accounts";
+    public List<Account> getAccounts() throws SolrServerException, IOException {
+        String solrUrl = env.getProperty("solr.url") != null ?  env.getProperty("solr.url")  : "http://localhost:8983/solr/accounts";
         String solrPwd = env.getProperty("solr.pwd") != null ?  env.getProperty("solr.pwd")  : "5qfOrZpA7u";;
         String solrUser = env.getProperty("solr.user") != null ?  env.getProperty("solr.user")  : "admin";;
         QueryRequest query = new QueryRequest(new SolrQuery("*:*"));
